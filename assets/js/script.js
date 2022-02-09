@@ -3,7 +3,7 @@ const win = document.querySelector(".win");
 const loss = document.querySelector(".lose");
 const timerElement = document.querySelector(".timer-count");
 const startButton = document.querySelector(".start-button");
-// const resetButton = document.querySelector(".reset-button");
+const resetButton = document.querySelector(".reset-button");
 
 let chosenWord = "";
 let numBlanks = 0;
@@ -163,6 +163,16 @@ document.addEventListener("keydown", (event) => {
 startButton.addEventListener("click", startGame);
 
 init();
+
+const resetGame = () => {
+  winCounter = 0;
+  lossCounter = 0;
+
+  setWins();
+  setLosses();
+};
+
+resetButton.addEventListener("click", resetGame);
 
 // pseudo text
 

@@ -1,6 +1,6 @@
 const wordBlanks = document.querySelector(".word-blanks");
 const win = document.querySelector(".win");
-const lose = document.querySelector(".lose");
+const loss = document.querySelector(".lose");
 const timerElement = document.querySelector(".timer-count");
 const startButton = document.querySelector(".start-button");
 // const resetButton = document.querySelector(".reset-button");
@@ -96,6 +96,30 @@ const setWins = () => {
 const setLosses = () => {
   loss.textContent = lossCounter;
   localStorage.setItem("lossCount", lossCounter);
+};
+
+const getWins = () => {
+  const storedWins = localStorage.getItem("winCount");
+
+  if (!storedWins) {
+    winCounter = 0;
+  } else {
+    winCounter = storedWins;
+  }
+
+  win.textContent = winCounter;
+};
+
+const getLosses = () => {
+  const storedLosses = localStorage.getItem("lossCount");
+
+  if (!storedLosses) {
+    lossCounter = 0;
+  } else {
+    lossCounter = storedLosses;
+  }
+
+  loss.textContent = lossCounter;
 };
 
 // pseudo text

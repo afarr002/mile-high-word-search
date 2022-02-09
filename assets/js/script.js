@@ -41,6 +41,14 @@ const startGame = () => {
   startTimer();
 };
 
+const winGame = () => {
+  wordBlanks.textContent = `WINNER!!
+  You must be native!`;
+  winCounter++;
+  startButton.disabled = false;
+  setWins();
+};
+
 // pseudo text
 
 // when user clicks start, word is hidden with underscores

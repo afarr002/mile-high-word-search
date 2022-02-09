@@ -122,6 +122,12 @@ const getLosses = () => {
   loss.textContent = lossCounter;
 };
 
+const checkWin = () => {
+  if (chosenWord === blankLetters.join("")) {
+    isWin = true;
+  }
+};
+
 // pseudo text
 
 // when user clicks start, word is hidden with underscores

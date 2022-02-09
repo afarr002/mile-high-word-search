@@ -88,6 +88,16 @@ const renderBlanks = () => {
   wordBlanks.textContent = blankLetters.join(" ");
 };
 
+const setWins = () => {
+  win.textContent = winCounter;
+  localStorage.setItem("winCount", winCounter);
+};
+
+const setLosses = () => {
+  loss.textContent = lossCounter;
+  localStorage.setItem("lossCount", lossCounter);
+};
+
 // pseudo text
 
 // when user clicks start, word is hidden with underscores

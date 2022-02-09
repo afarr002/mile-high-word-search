@@ -145,6 +145,21 @@ const checkLetters = (letter) => {
   }
 };
 
+document.addEventListener("keydown", (event) => {
+  if (timerCount === 0) {
+    return;
+  }
+
+  const key = event.key.toLowerCase();
+  const alphabetNumericCharacters = /^[a-zA-Z0-9]*$/;
+
+  if (alphabetNumericCharacters.includes(key)) {
+    const letterGuessed = event.key;
+    checkLetters(letterGuessed);
+    checkWin();
+  }
+});
+
 // pseudo text
 
 // when user clicks start, word is hidden with underscores

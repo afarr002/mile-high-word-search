@@ -10,6 +10,7 @@ let numBlanks = 0;
 let winCounter = 0;
 let lossCounter = 0;
 let isWin = false;
+let letterInWord = false;
 let timer;
 let timerCount;
 
@@ -125,6 +126,22 @@ const getLosses = () => {
 const checkWin = () => {
   if (chosenWord === blankLetters.join("")) {
     isWin = true;
+  }
+};
+
+const checkLetters = (letter) => {
+  numBlanks.forEach(() => {
+    if (chosenWord[i] === letter) {
+      letterInWord = true;
+    }
+  });
+  if (letterInWord) {
+    numBlanks.forEach(() => {
+      if (chosenWord[j] === letter) {
+        blankLetters[j] = letter;
+      }
+    });
+    wordBlanks.textContent = blankLetters.join(" ");
   }
 };
 

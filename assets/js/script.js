@@ -75,6 +75,19 @@ const setTimer = () => {
   }, 1000);
 };
 
+const renderBlanks = () => {
+  chosenWord = randomWord;
+  console.log(randomWord);
+  lettersInChosenWord = chosenWord.split("");
+  numBlanks = lettersInChosenWord.length;
+  blankLetters = [];
+
+  numBlanks.forEach(() => {
+    blankLetters.push("_");
+  });
+  wordBlanks.textContent = blankLetters.join(" ");
+};
+
 // pseudo text
 
 // when user clicks start, word is hidden with underscores

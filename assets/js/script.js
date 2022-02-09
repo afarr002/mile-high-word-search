@@ -56,6 +56,25 @@ const loseGame = () => {
   setLosses();
 };
 
+const setTimer = () => {
+  timer = setInterval(() => {
+    timerCount--;
+    timerElement.textContent = timerCount;
+
+    if (timerCount >= 0) {
+      if (isWin && timerCount > 0) {
+        clearInterval(timer);
+        winGame();
+      }
+    }
+
+    if (timerCount === 0) {
+      clearInterval(timer);
+      loseGame();
+    }
+  }, 1000);
+};
+
 // pseudo text
 
 // when user clicks start, word is hidden with underscores

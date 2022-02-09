@@ -32,6 +32,15 @@ const init = () => {
   getLosses();
 };
 
+const startGame = () => {
+  isWin = false;
+  timerCount = 10;
+
+  startButton.disabled = true;
+  renderBlanks();
+  startTimer();
+};
+
 // pseudo text
 
 // when user clicks start, word is hidden with underscores

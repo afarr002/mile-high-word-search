@@ -160,6 +160,8 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+startButton.addEventListener("click", startGame);
+
 // pseudo text
 
 // when user clicks start, word is hidden with underscores

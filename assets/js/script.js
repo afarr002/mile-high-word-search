@@ -49,6 +49,13 @@ const winGame = () => {
   setWins();
 };
 
+const loseGame = () => {
+  wordBlanks.textContent = "Game over, transplant.";
+  lossCounter++;
+  startButton.disabled = false;
+  setLosses();
+};
+
 // pseudo text
 
 // when user clicks start, word is hidden with underscores

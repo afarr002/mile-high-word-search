@@ -2,28 +2,27 @@
 <html>
 
 <head>
-    <title>CSS Box Styling</title>
+    <title>Mile High Word Guess</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
 
 <body>
     <header>
-        <div class="large-font">Welcome to the Wild West Word Search!</div>
+        <div class="large-font">Mile High Word Guess</div>
         <button class="start-button">Start</button>
     </header>
 
     <main>
         <section>
             <div class="card word-guess">
-                <div class="large-font word-blanks">t _ _ n _ _ i _ n</div>
+                <div class="large-font word-blanks">mi__ hi_h _i__</div>
             </div>
         </section>
 
         <section>
-            <div class="card results">
+            <div class="card2 results">
                 <div class="win-loss-container">
                     <div>
                         <h2>Wins: <span class="win">0 </span> </h2>
@@ -31,7 +30,7 @@
                     </div>
                     <button class="reset-button">Reset Score</button>
                 </div>
-                <div class="card timer">
+                <div class="timer">
                     <div class="timer-text">
                         <div class="large-font timer-count">20</div>
                         <h3>seconds remaining</h3>
@@ -39,12 +38,16 @@
 
                 </div>
             </div>
+            <x-grid columns=8 id="tabpanel3" class="tab-panel">
+                <x-col span="row" class="center-axyz tall" span-s=row>
+                    <div class="bg"></div>
+                    <div class="bg bg2"></div>
+                    <div class="bg bg3"></div>
+                </x-col>
+            </x-grid>
         </section>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

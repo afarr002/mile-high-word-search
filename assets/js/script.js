@@ -183,7 +183,7 @@ const startGame = () => {
   isWin = false;
   timerCount = 20;
 
-  startButton.disabled = true;
+  startButton.classList.add("hide");
   renderBlanks();
   startTimer();
 };
@@ -192,14 +192,18 @@ const winGame = () => {
   wordBlanks.textContent = `WINNER!!
   You must be native!`;
   winCounter++;
-  startButton.disabled = false;
+
+  startButton.innerHTML = "Restart?";
+  startButton.classList.remove("hide");
   setWins();
 };
 
 const loseGame = () => {
   wordBlanks.textContent = "Game over, transplant.";
   lossCounter++;
-  startButton.disabled = false;
+
+  startButton.innerHTML = "Restart?";
+  startButton.classList.remove("hide");
   setLosses();
 };
 
@@ -219,7 +223,7 @@ const startTimer = () => {
       clearInterval(timer);
       loseGame();
     }
-  }, 2000);
+  }, 1000);
 };
 
 const renderBlanks = () => {
@@ -311,7 +315,6 @@ document.addEventListener("keydown", (event) => {
 
 startButton.addEventListener("click", (event) => {
   startGame();
-  startButton.textContent = "Restart?";
 });
 
 init();

@@ -9,7 +9,10 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background: linear-gradient(0deg, rgba(19,41,61,1) 0%, rgba(237,245,249,1) 63%);
+}
+
+.hide {
+  display: none;
 }
 
 .reset-button {
@@ -26,9 +29,11 @@ body {
 }
 
 button {
-  background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
+  background: radial-gradient(circle, #bf0a30 0%, #ffd700 100%);
   border-radius: 8px;
-  color: #13293d;
+  color: white;
+  text-shadow: -0.5px -0.5px 0 #002868, 0.5px -0.5px 0 #002868,
+    -0.5px 0.5px 0 #002868, 0.5px 0.5px 0 #002868;
   cursor: pointer;
   font-size: 2em;
   letter-spacing: 0.21px;
@@ -45,9 +50,11 @@ button {
 header {
   padding: 40px;
   text-align: center;
-  background: #13293d;
-  color: #fff;
-  border-bottom:30px #879274;
+  /* background: #002868; */
+  color: #ffd700;
+  text-shadow: -1px -1px 0 #7f9695, 1px -1px 0 #7f9695, -1px 1px 0 #7f9695,
+    1px 1px 0 #7f9695;
+  border-bottom: 30px #7f9695;
 }
 
 main {
@@ -60,7 +67,6 @@ section {
   flex: 0 auto;
   padding: 8px;
   margin-top: 50px;
-  background-color: white;
   border-radius: 8px;
 }
 
@@ -75,13 +81,30 @@ section {
 }
 
 .card {
-  background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,124,33,0.604079131652661) 100%);
-  border: 1px solid #eceff1;
+  background: url("../images/us-co-splat-01-M.png") white;
+  background-size: cover;
+  border: 1px solid #7f9695;
   border-radius: 8px;
-  box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
-    rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
+  box-shadow: #7f9695 0 1px 2px 0, rgba(126, 149, 148, 0.15) 0 2px 4px 3px;
   margin: auto;
   padding: 20px;
+  color: white;
+  text-align: center;
+  text-shadow: -1px -1px 0 #002868, 1px -1px 0 #002868, -1px 1px 0 #002868,
+    1px 1px 0 #002868;
+}
+
+.card2 {
+  background: white;
+  border: 1px solid #7f9695;
+  border-radius: 8px;
+  box-shadow: #7f9695 0 1px 2px 0, rgba(126, 149, 148, 0.15) 0 2px 4px 3px;
+  margin: auto;
+  padding: 20px;
+  color: #ffd700;
+  text-align: center;
+  text-shadow: -1px -1px 0 #002868, 1px -1px 0 #002868, -1px 1px 0 #002868,
+    1px 1px 0 #002868;
 }
 
 .word-blanks {
@@ -90,15 +113,20 @@ section {
 
 .large-font {
   font-size: 3.5em;
-  text-align:center;
+  text-align: center;
 }
 
 .timer {
+  border: 1px solid #7f9695;
+  border-radius: 8px;
+  box-shadow: #7f9695 0 1px 2px 0, rgba(126, 149, 148, 0.15) 0 2px 4px 3px;
+  margin: auto;
   height: 240px;
   padding: 10px;
-  background: #13293d;
-  color: #fff;
+  color: #ffd700;
   text-align: center;
+  text-shadow: -1px -1px 0 #002868, 1px -1px 0 #002868, -1px 1px 0 #002868,
+    1px 1px 0 #002868;
 }
 
 .timer-text {
@@ -116,7 +144,6 @@ section {
   }
 
   section {
-    background-color: white;
     margin: 20px auto;
     width: 92vw;
   }
@@ -130,10 +157,39 @@ section {
   .reset-button {
     font-size: 12px;
     width: 20ox;
-    
   }
 
   .timer {
     height: 200px;
   }
- 
+}
+
+.bg {
+  animation: slide 10s ease-in-out infinite alternate;
+  background-image: linear-gradient(+60deg, #002868 50%, #bf0a30 50%);
+  bottom: 0;
+  left: -50%;
+  /* opacity: 0.15; */
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 9s;
+}
+
+.bg3 {
+  animation-duration: 10s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}

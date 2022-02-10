@@ -309,11 +309,14 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-startButton.addEventListener("click", startGame);
+startButton.addEventListener("click", (event) => {
+  startGame();
+  startButton.textContent = "Restart?";
+});
 
 init();
 
-const resetGame = () => {
+const resetWinLossCount = () => {
   winCounter = 0;
   lossCounter = 0;
 
@@ -321,7 +324,7 @@ const resetGame = () => {
   setLosses();
 };
 
-resetButton.addEventListener("click", resetGame);
+resetButton.addEventListener("click", resetWinLossCount);
 
 // pseudo text
 
